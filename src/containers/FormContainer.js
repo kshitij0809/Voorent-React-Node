@@ -11,7 +11,7 @@ class FormContainer extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			ownerName: '',
+			ownerName: 'kshitij',
 			Email:'',
 			password:'',
 			phoneNumber:'',			
@@ -165,13 +165,37 @@ class FormContainer extends Component {
 			</div>
 		);}
 		return (<div>
-			        
+			        <DisForm
+					ownerName={ this.state.ownerName}
+					Email={ this.state.Email}
+					password={ this.state.password}
+					phoneNumber={ this.state.phoneNumber}
+					ownerAgeRangeSelection={ this.state.ownerAgeRangeSelection}
+					
+					/>
+					<button
+					className="btn btn-link float-left"
+					onClick={this.handleLogoutClick}>{button}</button>
 					
 					</div>);
 	}
 }
 
 
+function LoginButton(props) {
+  return (
+    <button onClick={props.onClick}>
+      Login 
+    </button>
+  );
+}
 
+function LogoutButton(props) {
+  return (
+    <button onClick={props.onClick}>
+      Go Back to Form
+    </button>
+  );
+}
 export default FormContainer;
 
