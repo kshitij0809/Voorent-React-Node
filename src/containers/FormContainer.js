@@ -114,8 +114,54 @@ class FormContainer extends Component {
 		if(!isSubmitted){
 		return (
 			<div>
-
+			<form className="container" onSubmit={this.handleFormSubmit}>
+				<h5>React Js Form</h5>
+				<SingleInput
+					inputType={'text'}
+					title={'Full name'}
+					name={'name'}
+					controlFunc={this.handleFullNameChange}
+					content={this.state.ownerName}
+					placeholder={'Type first and last name here'} />
+				<SingleInputEmail
+					inputType={'text'}
+					title={'valid email'}
+					name={'name'}
+					controlFunc={this.handleEmailChange}
+					content={this.state.Email}
+					placeholder={'Type valid Email Address'} />
+				<SingleInputPassword 
+					inputType={'text'}
+					title={'valid password'}
+					name={'name'}
+					controlFunc={this.handlePassword }
+					content={this.state.password}
+					placeholder={'Type Password'} />
+				<SingleInputPhoneNumber 
+					inputType={'text'}
+					title={'valid phoneNumber'}
+					name={'name'}
+					controlFunc={this.handlePhoneNumber }
+					content={this.state.phoneNumber}
+					placeholder={'Type Valid Phone Number'} />
 				
+				<Select
+				    title={'Country Name'}
+					name={'ageRange'}
+					placeholder={'Choose your age range'}
+					controlFunc={this.handleAgeRangeSelect}
+					options={this.state.ageOptions}
+					selectedOption={this.state.ownerAgeRangeSelection} />
+				
+				<input
+					type="submit"
+					className="btn btn-primary float-right"
+					value="Submit"
+					/>
+				<button
+					className="btn btn-link float-left"
+					onClick={this.handleClearForm}>Clear form</button>
+			</form>
 			</div>
 		);}
 		return (<div>
