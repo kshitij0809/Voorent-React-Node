@@ -46,27 +46,54 @@ class FormContainer extends Component {
 	}
 	
   handleLogoutClick() {
-   
+    this.setState({isSubmitted: false});
   }
 
 	handlePassword(e){
-		
+		this.setState({ password: e.target.value }, () => console.log('name:', this.state.password));
 	} 
 	handlePhoneNumber(e){
+		this.setState({ phoneNumber: e.target.value }, () => console.log('name:', this.state.phoneNumber));
 	} 
     handleEmailChange(e){
+    	this.setState({ Email: e.target.value }, () => console.log('name:', this.state.Email));
     }
 	handleFullNameChange(e) {
+		this.setState({ ownerName: e.target.value }, () => console.log('name:', this.state.ownerName));
 	}
 	
 	handleAgeRangeSelect(e) {
+		this.setState({ ownerAgeRangeSelection: e.target.value }, () => console.log('age range', this.state.ownerAgeRangeSelection));
 	}
 	
 	handleClearForm(e) {
-		
+		e.preventDefault();
+		this.setState({
+			ownerName: '',
+			Email:'',
+			password:'',
+			phoneNumber:'',
+			ageOptions:"",
+			ownerAgeRangeSelection: '',
+			
+		});
 	}
 	handleFormSubmit(e) {
-	
+		e.preventDefault();
+
+		const formPayload = {
+			ownerName: this.state.ownerName,
+			password:this.state.password,
+			phoneNumber:this.state.phoneNumber,
+			Email:this.state.Email,
+			ageOptions:this.state.ageOptions,			
+			ownerAgeRangeSelection: this.state.ownerAgeRangeSelection
+			
+		};
+
+		console.log('Send this in a POST request:', formPayload);
+        this.setState({isSubmitted: true});
+
 
 
 		
