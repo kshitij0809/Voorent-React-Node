@@ -1,6 +1,6 @@
-###Tutorial: React.js task
+### React.js task
 
-
+###### react App is a task given by a start up named Voorent for internship.
 
 To get started:
  1. Make sure you're using Node 6 or higher (4 and higher will work, though)
