@@ -1,0 +1,39 @@
+****************************************
+
+question two:===>>>
+
+
+We have a file which has 10 million numbers put in randomly ranging from 0 to 99.
+Sort the array and write it to another file without keeping the whole array into 
+memory or reading the whole file at once and putting it in memory. 
+
+
+
+
+************************************************
+
+
+Brief Solution explanation:==>>
+
+
+we need two techiniques:-
+
+1)MergeSort 
+
+	     1. Find the middle point to divide the array into two halves:  
+	             middle m = (l+r)/2
+	     2. Call mergeSort for first half:   
+	             Call mergeSort(arr, l, m)
+	     3. Call mergeSort for second half:
+	             Call mergeSort(arr, m+1, r)
+	     4. Merge the two halves sorted in step 2 and 3:
+	             Call merge(arr, l, m, r)
+
+2)Merge N Sorted Arrays
+
+
+		1. Create an output array of size n*k.
+		2. Create a min heap of size k and insert 1st element in all the arrays into the heap
+		3. Repeat following steps n*k times.
+		     a) Get minimum element from heap (minimum is always at root) and store it in output array.
+		     b) Replace heap root with next element from the array from which the element is extracted. If the array doesn’t have any more elements, then replace root with infinite. After replacing the root, heapify the tree.
