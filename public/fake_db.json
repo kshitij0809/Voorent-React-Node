@@ -1,0 +1,20 @@
+{
+  "ownerName": "",
+  "petSelections": ["dog", "cat", "rabbit", "iguana", "pony", "ferret", "fish", "bird"],
+  "selectedPets": ["dog", "cat", "ferret"],
+  "ageOptions": ["China",
+"India",
+"United states",
+"Indonesia",
+"Brazil",
+"Pakistan",
+"Nigeria",
+"Bangladesh",
+"Russia",
+"Japan"],
+  "ownerAgeRangeSelection": "",
+  "siblingOptions": ["yes", "no"],
+  "siblingSelection": ["yes"],
+  "currentPetCount": 0,
+  "description": ""
+}
